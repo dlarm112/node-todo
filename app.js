@@ -1,12 +1,6 @@
 const fs = require('fs')
 const yargs = require('yargs')
 const chalk = require('chalk');
-const {
-    describe
-} = require('yargs');
-const {
-    clear
-} = require('console');
 
 function loadData() {
     try {
@@ -46,7 +40,7 @@ yargs.command({
     },
     handler: function (arg) {
         console.log(chalk.blue.bold("listing todos"))
-
+        let data = loadData()
         console.log(arg)
         if (arg.status === "all") {
             data = data
@@ -57,10 +51,15 @@ yargs.command({
             data = data.filter(item => item.status === false)
         }
         data.forEach(({
-                todo,
-                status
-            }, idx) =>
-            console.log(`idx: ${idx} todo: ${todo} status: ${status}`))
+            todo,
+            status
+        }, idx) => {
+            if (status === true) {
+                console.log(chalk.green(`idx: ${idx} todo: ${todo} status: ${status}`))
+            } else if (status === false) {
+                console.log(chalk.red(`idx: ${idx} todo: ${todo} status: ${status}`))
+            }
+        })
     },
 })
 

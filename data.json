@@ -1,1 +1,13 @@
-[{"todo":"test","status":false},{"todo":"get food","status":false},{"todo":"hellow wordlds","status":true}]
+[{
+    "todo": "test",
+    "status": false
+}, {
+    "todo": "get food",
+    "status": false
+}, {
+    "todo": "hellow wordlds",
+    "status": true
+}, {
+    "todo": "helloowwww",
+    "status": false
+}]
