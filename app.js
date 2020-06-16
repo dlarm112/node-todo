@@ -54,14 +54,14 @@ yargs.command({
         }, idx) => {
             if (status === true) {
                 console.log(chalk.green(`
-                idx: ${idx} 
-                todo: ${todo} 
-                status: ${status}`))
+                ID: ${idx} 
+                TASK: ${todo} 
+                STATUS:  ${status}`))
             } else if (status === false) {
                 console.log(chalk.red(`
-                idx: ${idx} 
-                todo: ${todo} 
-                status: ${status}`))
+                ID: ${idx} 
+                TASK: ${todo} 
+                STATUS: ${status}`))
             }
         })
     },
