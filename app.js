@@ -41,10 +41,8 @@ yargs.command({
     handler: function (arg) {
         console.log(chalk.blue.bold("listing todos"))
         let data = loadData()
-        console.log(arg)
         if (arg.status === "all") {
             data = data
-            console.log("all wokred")
         } else if (arg.status === "list complete") {
             data = data.filter(item => item.status === true)
         } else if (arg.status === "list incomplete") {
@@ -55,9 +53,15 @@ yargs.command({
             status
         }, idx) => {
             if (status === true) {
-                console.log(chalk.green(`idx: ${idx} todo: ${todo} status: ${status}`))
+                console.log(chalk.green(`
+                idx: ${idx} 
+                todo: ${todo} 
+                status: ${status}`))
             } else if (status === false) {
-                console.log(chalk.red(`idx: ${idx} todo: ${todo} status: ${status}`))
+                console.log(chalk.red(`
+                idx: ${idx} 
+                todo: ${todo} 
+                status: ${status}`))
             }
         })
     },
